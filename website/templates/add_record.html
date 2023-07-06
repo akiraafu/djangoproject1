@@ -9,7 +9,9 @@
     <form method="POST" action="{% url 'add_record'%}" class="mt-5">
         {% csrf_token%}
         {{form.as_p}}   
-           <button type="submit" class="btn btn-secondary mt-3">Add Record</button>
+           <button type="submit" class="btn btn-dark mt-3">Add Record</button>
+            <a href="{%url 'home' %}" class="btn btn-secondary mt-3">Back</a>
+
     </form>
 </div>
 
