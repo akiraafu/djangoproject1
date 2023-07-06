@@ -23,7 +23,7 @@
                 {% for record in records %}
                 <tbody>
                     <tr>
-                        <th scope="row">{{record.id}}</th>
+                        <td> <a href="{%url 'record' record.id%}">{{record.id}}</a></td>
                         <td>{{record.first_name}} {{record.last_name}}</td>
                         <td>{{record.email}}</td>
                         <td> {{record.phone}}</td>
@@ -34,14 +34,11 @@
                         <td>{{record.created_at}}</td>
                     </tr>
                 </tbody>
-            {% endfor %}
+                {% endfor %}
+            {%endif%}
         </table>
-
-          
-
-        {%endif%}
-
     {%else%}
+    <div class="col-md-6 offset-md-3">
         <h1>Login</h1>
         <form method="POST" action="{% url 'home'%}" class="mt-5">
          {% csrf_token%}
@@ -54,6 +51,7 @@
             </div>
             <button type="submit" class="btn btn-secondary mt-3">Login</button>
         </form>
+    </div>
     {% endif %}
 </div>
 {% endblock%}
